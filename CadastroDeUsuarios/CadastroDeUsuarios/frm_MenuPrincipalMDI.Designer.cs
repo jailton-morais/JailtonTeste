@@ -32,17 +32,17 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.incluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreOSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripAberto = new System.Windows.Forms.ToolStripButton();
-            this.toolStripFechado = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripAberto = new System.Windows.Forms.ToolStripButton();
+            this.toolStripFechado = new System.Windows.Forms.ToolStripButton();
+            this.incluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -58,14 +58,15 @@
             this.menuStrip.Size = new System.Drawing.Size(859, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // toolStripMenuCadastro
             // 
             this.toolStripMenuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarToolStripMenuItem,
+            this.incluirToolStripMenuItem,
             this.alterarToolStripMenuItem,
-            this.deletarToolStripMenuItem,
-            this.incluirToolStripMenuItem});
+            this.removerToolStripMenuItem});
             this.toolStripMenuCadastro.Name = "toolStripMenuCadastro";
             this.toolStripMenuCadastro.Size = new System.Drawing.Size(66, 20);
             this.toolStripMenuCadastro.Text = "Cadastro";
@@ -75,24 +76,7 @@
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Listar";
-            // 
-            // alterarToolStripMenuItem
-            // 
-            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alterarToolStripMenuItem.Text = "Incluir";
-            // 
-            // deletarToolStripMenuItem
-            // 
-            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
-            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deletarToolStripMenuItem.Text = "Alterar";
-            // 
-            // incluirToolStripMenuItem
-            // 
-            this.incluirToolStripMenuItem.Name = "incluirToolStripMenuItem";
-            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.incluirToolStripMenuItem.Text = "Remover";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -105,7 +89,7 @@
             // sobreOSistemaToolStripMenuItem
             // 
             this.sobreOSistemaToolStripMenuItem.Name = "sobreOSistemaToolStripMenuItem";
-            this.sobreOSistemaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sobreOSistemaToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.sobreOSistemaToolStripMenuItem.Text = "Sobre o Sistema";
             this.sobreOSistemaToolStripMenuItem.Click += new System.EventHandler(this.sobreOSistemaToolStripMenuItem_Click);
             // 
@@ -119,28 +103,6 @@
             this.toolStrip.Size = new System.Drawing.Size(859, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
-            // 
-            // toolStripAberto
-            // 
-            this.toolStripAberto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripAberto.Image = global::CadastroDeUsuarios.Properties.Resources.aberto;
-            this.toolStripAberto.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripAberto.Name = "toolStripAberto";
-            this.toolStripAberto.Size = new System.Drawing.Size(23, 22);
-            this.toolStripAberto.Text = "toolStripAberto";
-            this.toolStripAberto.ToolTipText = "Fechar o Sistema";
-            this.toolStripAberto.Visible = false;
-            // 
-            // toolStripFechado
-            // 
-            this.toolStripFechado.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripFechado.Image = global::CadastroDeUsuarios.Properties.Resources.fechado;
-            this.toolStripFechado.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripFechado.Name = "toolStripFechado";
-            this.toolStripFechado.Size = new System.Drawing.Size(23, 22);
-            this.toolStripFechado.Text = "toolStripFechado";
-            this.toolStripFechado.ToolTipText = "Clique aqui para Abrir o Sistema";
-            this.toolStripFechado.Click += new System.EventHandler(this.toolStripFechado_Click);
             // 
             // statusStrip
             // 
@@ -157,6 +119,50 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // toolStripAberto
+            // 
+            this.toolStripAberto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripAberto.Image = global::CadastroDeUsuarios.Properties.Resources.aberto;
+            this.toolStripAberto.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripAberto.Name = "toolStripAberto";
+            this.toolStripAberto.Size = new System.Drawing.Size(23, 22);
+            this.toolStripAberto.Text = "toolStripAberto";
+            this.toolStripAberto.ToolTipText = "Fechar o Sistema";
+            this.toolStripAberto.Visible = false;
+            this.toolStripAberto.Click += new System.EventHandler(this.toolStripAberto_Click);
+            // 
+            // toolStripFechado
+            // 
+            this.toolStripFechado.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripFechado.Image = global::CadastroDeUsuarios.Properties.Resources.fechado;
+            this.toolStripFechado.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripFechado.Name = "toolStripFechado";
+            this.toolStripFechado.Size = new System.Drawing.Size(23, 22);
+            this.toolStripFechado.Text = "toolStripFechado";
+            this.toolStripFechado.ToolTipText = "Clique aqui para Abrir o Sistema";
+            this.toolStripFechado.Click += new System.EventHandler(this.toolStripFechado_Click);
+            // 
+            // incluirToolStripMenuItem
+            // 
+            this.incluirToolStripMenuItem.Name = "incluirToolStripMenuItem";
+            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.incluirToolStripMenuItem.Text = "Incluir";
+            this.incluirToolStripMenuItem.Click += new System.EventHandler(this.incluirToolStripMenuItem_Click);
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarToolStripMenuItem.Text = "Alterar";
+            this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click_1);
+            // 
+            // removerToolStripMenuItem
+            // 
+            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
+            this.removerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removerToolStripMenuItem.Text = "Remover";
+            this.removerToolStripMenuItem.Click += new System.EventHandler(this.removerToolStripMenuItem_Click);
             // 
             // frm_MenuPrincipalMDI
             // 
@@ -190,13 +196,13 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuCadastro;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem incluirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem sobreOSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripAberto;
         private System.Windows.Forms.ToolStripButton toolStripFechado;
+        private System.Windows.Forms.ToolStripMenuItem incluirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
     }
 }
 

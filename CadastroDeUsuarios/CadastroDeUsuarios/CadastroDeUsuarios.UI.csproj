@@ -88,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_Consulta.resx">
+      <DependentUpon>frm_Consulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +126,16 @@
   <ItemGroup>
     <Content Include="img\aberto.png" />
     <Content Include="img\fechado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroDeUsuarios.BLL\CadastroDeUsuarios.BLL.csproj">
+      <Project>{0520ebbf-029a-4e4c-be72-d4738fb6a73a}</Project>
+      <Name>CadastroDeUsuarios.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadastroDeUsuarios.DTO\CadastroDeUsuarios.DTO.csproj">
+      <Project>{f5530ce0-4930-416c-ac95-a856a7df333b}</Project>
+      <Name>CadastroDeUsuarios.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,6 +46,7 @@
             this.bt_entrar.TabIndex = 3;
             this.bt_entrar.Text = "ENTRAR";
             this.bt_entrar.UseVisualStyleBackColor = true;
+            this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click);
             // 
             // tb_nome
             // 

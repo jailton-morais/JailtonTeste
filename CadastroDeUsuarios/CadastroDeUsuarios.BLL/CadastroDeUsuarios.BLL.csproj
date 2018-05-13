@@ -41,6 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroDeUsuarios.DAL\CadastroDeUsuarios.DAL.csproj">
+      <Project>{30ed286c-2636-4af4-8a5f-510e0d43aa45}</Project>
+      <Name>CadastroDeUsuarios.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadastroDeUsuarios.DTO\CadastroDeUsuarios.DTO.csproj">
+      <Project>{f5530ce0-4930-416c-ac95-a856a7df333b}</Project>
+      <Name>CadastroDeUsuarios.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
