@@ -44,16 +44,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_Altera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Altera.Designer.cs">
+      <DependentUpon>frm_Altera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Consulta.Designer.cs">
+      <DependentUpon>frm_Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Incluir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Incluir.Designer.cs">
+      <DependentUpon>frm_Incluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_MenuPrincipalMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MenuPrincipalMDI.Designer.cs">
+      <DependentUpon>frm_MenuPrincipalMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Remove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Remove.Designer.cs">
+      <DependentUpon>frm_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Sobre.Designer.cs">
+      <DependentUpon>frm_Sobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MenuPrincipalMDI.resx">
+      <DependentUpon>frm_MenuPrincipalMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Sobre.resx">
+      <DependentUpon>frm_Sobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -63,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\aberto.png" />
+    <Content Include="img\fechado.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
