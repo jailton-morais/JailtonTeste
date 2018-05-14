@@ -50,16 +50,19 @@
             // 
             // tb_nome
             // 
+            this.tb_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_nome.Location = new System.Drawing.Point(107, 56);
             this.tb_nome.Name = "tb_nome";
-            this.tb_nome.Size = new System.Drawing.Size(169, 20);
+            this.tb_nome.Size = new System.Drawing.Size(169, 21);
             this.tb_nome.TabIndex = 1;
             // 
             // tb_senha
             // 
+            this.tb_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_senha.Location = new System.Drawing.Point(107, 121);
             this.tb_senha.Name = "tb_senha";
-            this.tb_senha.Size = new System.Drawing.Size(169, 20);
+            this.tb_senha.PasswordChar = '*';
+            this.tb_senha.Size = new System.Drawing.Size(169, 21);
             this.tb_senha.TabIndex = 2;
             // 
             // label1

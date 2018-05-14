@@ -17,11 +17,13 @@ namespace CadastroDeUsuarios
             this.toolStripMenuCadastro.Enabled = true;
             this.toolStripAberto.Visible = true;
             this.toolStripFechado.Visible = false;
+            this.toolStripStatusLabel.Text = "STATUS: Conectado";
         }
 
         public  frm_MenuPrincipalMDI()
         {
             InitializeComponent();
+            this.toolStripStatusLabel.Text = "STATUS: Desconectado";
             this.toolStripMenuCadastro.Enabled = false;
         }
 
@@ -87,9 +89,7 @@ namespace CadastroDeUsuarios
             this.toolStripAberto.Visible = false;
             this.toolStripFechado.Visible = true;
             FecharFormulariosFilhos();
-         
-
-             //  ((frm_Consulta)Application.OpenForms["frm_Consulta"]).Close() ;
+            this.toolStripStatusLabel.Text = "STATUS: Desconectado";
 
         }
 

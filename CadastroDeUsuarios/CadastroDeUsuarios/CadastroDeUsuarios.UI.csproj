@@ -88,14 +88,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_Altera.resx">
+      <DependentUpon>frm_Altera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Consulta.resx">
       <DependentUpon>frm_Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Incluir.resx">
+      <DependentUpon>frm_Incluir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MenuPrincipalMDI.resx">
       <DependentUpon>frm_MenuPrincipalMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Remove.resx">
+      <DependentUpon>frm_Remove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Sobre.resx">
       <DependentUpon>frm_Sobre.cs</DependentUpon>
